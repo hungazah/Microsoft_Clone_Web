@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Admin</title>
+    <link rel="stylesheet" href="../CSS/loginAdmin.css">
+    <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../ASSETS/img">
+</head>
+<body>
+   
+    <div class="containner">
+        
+        <div class="myform">
+            <form>
+                <img id="micro" src="../ASSETS/img/pic8.png" alt="">
+                <h2>ADMIN LOGIN</h2>
+                <input type="text" id="username" placeholder="Admin Name">
+                <input type="password" id="password" placeholder="Password">
+                <button type="button" onclick="{login()}">LOGIN</button>
+            </form>
+        </div>
+        <div class="image">
+            <img src="../ASSETS/img/pic7.jpeg" width="300px">
+        </div>
+
+    </div>
+    <script>
+        data={
+            "accounts":[
+                    {
+                        "username":"thanhhung",
+                        "password":"admin"
+                    },
+                    {
+                        "username":"vietanh",
+                        "password":"admin"
+                    },
+                    {
+                        "username":"duyanh",
+                        "password":"admin"
+                    }
+            ]
+            
+        }
+        function login(){
+            var username = document.getElementById('username').value
+            var password = document.getElementById('password').value
+            var check = false
+            data["accounts"].map((account)=>{
+                if(username==account.username&&password==account.password){
+                    check= true
+                }
+            })
+            if(check){
+                window.location.assign("http://127.0.0.1:5500/HTML/admin.html")
+            }
+            else{
+                alert("Dang nhap khong thanh cong")
+            }
+        }
+    </script>
+</body>

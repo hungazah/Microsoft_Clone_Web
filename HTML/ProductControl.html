@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="themify-icons/themify-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <title>Microsof Product</title>
+  </head>
+
+  <body onload="renderUser()">
+    <div class="container-fluid" style="background-color: rgb(0, 28, 64)">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="./admin.html" class="nav-link active" aria-current="page"
+              >Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="./Order.html" class="nav-link">Order</a>
+          </li>
+          <li class="nav-item">
+            <a href="./User_function.html" class="nav-link">User</a>
+          </li>
+          <li class="nav-item">
+            <a href="./Customer.html" class="nav-link">Customer</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+    <div id="main">
+      <div id="container">
+        <div id="content" style="padding: 30px 30px 0px 30px">
+          <div class="app-title">
+            <div class="row">
+              <div class="col-md-12">
+                <a
+                  href=""
+                  style="
+                    text-decoration: none;
+                    color: #333;
+                    font-weight: 600;
+                    font-size: 16px;
+                  "
+                  >Input Product</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="wrapper">
+                <div class="title-body">
+                  <div class="top">
+                    <button
+                      type="button"
+                      id="btnAdd"
+                      onclick="hienThi()"
+                      class="btn btn-secondary"
+                      style="
+                        background-color: rgb(21, 204, 45);
+                        border-color: #ccc;
+                      "
+                    >
+                      <i class="bi bi-plus" style="margin-right: 5px"></i>
+                    </button>
+                    <hr style="margin: 12px 0" />
+                  </div>
+                  <div class="form_add" id="add" style="display: none">
+                    <div class="row my-2">
+                      <div class="col-xl-6 col-lg-12 col-md-12">
+                        <label>ID</label>
+                        <div>
+                          <input
+                            style="display: none"
+                            type="text"
+                            id="ma"
+                            style="width: 25rem"
+                          />
+                          <input type="text" id="maSP" style="width: 25rem" />
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-12 col-md-12">
+                        <label>Product</label>
+                        <div>
+                          <input type="text" id="ten" style="width: 25rem" />
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-12 col-md-12">
+                        <label>Price</label>
+                        <div>
+                          <input type="text" id="gia" style="width: 25rem" />
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-12 col-md-12">
+                        <label>Manufacturer Name</label>
+                        <div>
+                          <select id="danhmuc" style="width: 25rem">
+                            <option selected value="Laptop">Laptop</option>
+                            <option value="Xbox">Xbox</option>
+                            <option value="Console">Console</option>
+                            <option value="Another">Another</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <button
+                          type="button"
+                          class="btn btn-warning my-3"
+                          style="width: 120px; font-weight: bold; color: #333"
+                          onclick="them()"
+                        >
+                          Add
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-warning my-3"
+                          style="width: 120px; font-weight: bold; color: #333"
+                          onclick="changeUser()"
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="table_content">
+                <table
+                  id="render"
+                  class="table table-bordered"
+                  style="width: 1200px"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col">No</th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Manufacturer</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="data"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JS/ProductControl.js"></script>
+  </body>
+</html>

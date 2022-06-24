@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/admin.css" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    \
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <title>Microsoft Admin</title>
+  </head>
+  <body>
+    <section id="menu" style="height: 100%">
+      <div class="logo">
+        <i class="bi bi-microsoft"></i>
+        <h2>Microsoft</h2>
+      </div>
+      <div class="items">
+        <li><i class="bi bi-speedometer2"></i> <a href="#">Dashboard</a></li>
+        <li><i class="bi bi-table"></i> <a href="./Order.html">Order</a></li>
+        <li>
+          <i class="bi bi-back"></i> <a href="./ProductControl.html">Product</a>
+        </li>
+        <li>
+          <i class="bi bi-people"></i> <a href="./Customer.html">Customer</a>
+        </li>
+
+        <li>
+          <i class="bi bi-person"></i> <a href="./User_function.html">User</a>
+        </li>
+      </div>
+    </section>
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div class="search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search" />
+          </div>
+        </div>
+        <div class="profile">
+          <i class="bi bi-bell"></i> <i class="bi bi-person-circle"></i>
+        </div>
+      </div>
+      <h3 class="i-name">Dashboard</h3>
+      <div class="value">
+        <div class="val-box">
+          <i class="bi bi-people-fill"></i>
+          <div>
+            <h3>1507</h3>
+            <span>New Users</span>
+          </div>
+        </div>
+        <div class="val-box">
+          <i class="bi bi-cart"></i>
+          <div>
+            <h3>1507</h3>
+            <span>Order</span>
+          </div>
+        </div>
+
+        <div class="val-box">
+          <i class="bi bi-cash"></i>
+          <div>
+            <h3>1507</h3>
+            <span>Product Sell</span>
+          </div>
+        </div>
+
+        <div class="val-box">
+          <i class="bi bi-currency-dollar"></i>
+          <div>
+            <h3>$1507.2002</h3>
+            <span>This month</span>
+          </div>
+        </div>
+      </div>
+      <canvas id="lineChart"></canvas>
+    </section>
+  </body>
+  <script>
+    var bienx = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
+    var bieny = [1, 4, 6, 8, 2, 5, 7];
+    var CHART = document.getElementById("lineChart").getContext("2d");
+    var line_chart = new Chart(CHART, {
+      type: "bar",
+      data: {
+        labels: bienx,
+        datasets: [
+          {
+            label: "SALES CHART",
+            data: bieny,
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+            ],
+            borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+    });
+  </script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../ASSETS/img">
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap-grid.css.map">
+</head>
+<body>
+    
+        <div class="sign-up-form">
+                <img src="../ASSETS/img/pic4.png" alt="">
+                <div class="h1">Sign in</div>
+                <form>
+                    <input type="text" class="input-box" id="username" placeholder="Email,phone,or Skype">
+                    <input type="password" class="input-box2" id="password" placeholder="Your Password">
+                    <p class="help1">No account? <a href="#">Create one!</a></p>
+                    <p class="help2"><a href="#">Sign in with a security key <i class="ti-help-alt js-question"></i></a></p>
+                    <button type="button" class="sign-btn" onclick={login()}>Sign in</button>
+                </form>
+           
+        </div>
+       
+        <script>
+            const clickQuestion = document.querySelectorAll('.js-question')
+            for(const clickQ of clickQuestion) {
+                
+            }
+            data={
+                "accounts":[
+                    {
+                        "username":"thanhhung",
+                        "password":"user"
+                    },
+                    {
+                        "username":"vietanh",
+                        "password":"user"
+                    },
+                    {
+                        "username":"duyanh",
+                        "password":"user"
+                    }
+                ]
+            }
+            function login(){
+                var username = document.getElementById('username').value
+                var password = document.getElementById('password').value
+                var check=false
+                data["accounts"].map((account)=>{
+                    if(username==account.username&&password==account.password){
+                        check=true
+                    }
+                })
+
+                if(check){
+                    window.location.assign("http://127.0.0.1:5500/HTML/index.html")
+                }
+                else{
+                    alert("Dang nhap khong thanh cong")
+                }
+            }
+
+        </script>
+        
+
+   
+</body>
+</html>
